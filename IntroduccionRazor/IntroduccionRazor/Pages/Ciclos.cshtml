@@ -1,0 +1,30 @@
+﻿@page
+@model IntroduccionRazor.Pages.CiclosModel
+@{
+
+}
+
+<h3>Ejemplo Ciclo While</h3>
+@{
+    var contador = 0;
+    while (contador < 10)
+    {
+        <p>@contador</p>
+        contador++;
+    }
+}
+<br/>
+<h3>Ejemplo Ciclo For</h3>
+@for(var i = 0; i <= 20; i++)
+{
+    <p>@i</p>
+}
+<br/>
+<h3>Ejemplo Ciclo For Each</h3>
+<ul>
+    @foreach (var x in HttpContext.Request.Headers)
+    {
+        <li>@x</li>
+    }
+</ul>
+<br/>

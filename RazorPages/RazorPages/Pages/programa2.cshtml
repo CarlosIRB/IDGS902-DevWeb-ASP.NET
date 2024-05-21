@@ -1,0 +1,27 @@
+﻿@page
+@model RazorPages.Pages.programa2Model
+@{
+}
+
+<!--Mostrar cifrado cesar-->
+<h3>Cifrado Cesar</h3>
+<form method="post">
+    <p>Texto: <input type="text" asp-for="input" /></p>
+    <p>Desplazamiento: <input type="number" asp-for="n" /></p>
+    <p><input type="submit" value="Cifrar" /></p>
+
+    @if(Model.mensaje_cifrado != null && Model.mensaje_cifrado != "")
+    {
+        <p>Texto cifrado: @Model.mensaje_cifrado</p>
+    }
+
+    @if (Model.mensaje_cifrado_latin != null && Model.mensaje_cifrado_latin != "")
+    {
+        <p>Texto cifrado solo con caracteres romanos en mayuscula: @Model.mensaje_cifrado_latin</p>
+    }
+
+    @if (Model.mensaje_decodificado != null && Model.mensaje_decodificado != "")
+    {
+        <p>Este es el texto aplicando la decodificación: @Model.mensaje_decodificado</p>
+    }
+</form>

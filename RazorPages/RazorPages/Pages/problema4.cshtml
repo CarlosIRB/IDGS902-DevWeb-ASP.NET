@@ -1,0 +1,21 @@
+﻿@page
+@model RazorPages.Pages.problema4Model
+@{
+    ViewData["Title"] = "Problema 3";
+}
+
+<h2>Problema 4</h2>
+
+<form method="post">
+    <button type="submit">Generar números</button>
+</form>
+
+@if (Model.Numbers != null)
+{
+    <p><b>Arreglo Aleatorio:</b> @string.Join(", ", Model.Numbers)</p>
+    <p><b>Suma:</b> @Model.Sum</p>
+    <p><b>Promedio:</b> @Model.Mean</p>
+    <p><b>Arreglo Ordenado:</b> @string.Join(", ", Model.SortedNumbers)</p>
+    <p><b>Moda:</b> @string.Join(" y ", Model.Mode)</p>
+    <p><b>Mediana:</b> @Model.Median</p>
+}

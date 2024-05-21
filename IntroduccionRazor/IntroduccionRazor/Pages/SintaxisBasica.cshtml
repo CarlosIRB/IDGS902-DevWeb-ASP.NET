@@ -1,0 +1,17 @@
+﻿@page
+@model IntroduccionRazor.Pages.SintaxisBasicaModel
+@{
+    var nombre = "Lorena";
+}
+
+<!--Expresion en linea-->
+<p>El valor de la variable nombre es: @nombre</p>
+
+<!--Bloque con múltiples lineas-->
+@{
+    var bienvenida = "Bienvenido a nuestro sitio!!!";
+    var diaSemana = DateTime.Now.DayOfWeek;
+    var mensajeBienvenida = bienvenida + " Aquí en León es: " + diaSemana + " Y hace mucho calor";
+}
+
+<p>El mensaje de bienvenida es: @mensajeBienvenida</p>

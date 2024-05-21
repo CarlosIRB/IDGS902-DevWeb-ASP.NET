@@ -1,0 +1,48 @@
+﻿@page
+@model RazorPages.Pages.programa1Model
+@{
+
+}
+
+<!--Programa para calcular el indice de masa corporal-->
+
+<h3>Calcular indice de masa corporal</h3>
+<form method="post">
+    <p>Peso: <input type="number" step="0.1" asp-for="peso" /></p>
+    <p>Altura: <input type="number" step="0.1" asp-for="altura" /></p>
+    <p><input type="submit" value="Calcular" /></p>
+    <!--Comparamos Model.estado en los valores del 1 al 6 y asginamos un texto y una imagen-->
+    @if (Model.estado == "1")
+    {
+        <p>Peso bajo</p>
+        <img src="https://media.istockphoto.com/id/482708583/es/foto/funny-retro-deporte-nerd.jpg?s=612x612&w=0&k=20&c=QjQr2OEu-_y9P8KGEMcT-GHjc1Brt697F667OAw2Ee4=" />
+    }
+    else if (Model.estado == "2")
+    {
+        <p>Peso normal</p>
+        <img src="https://img.freepik.com/foto-gratis/retrato-joven-sano-manzana-verde_171337-8207.jpg?size=626&ext=jpg" />
+    }
+    else if (Model.estado == "3")
+    {
+        <p>Sobre peso</p>
+
+        <img src="https://www.revistacompensar.com/wp-content/uploads/2020/11/que-es-la-obesidad-grado-1-grado-2-grado-3-aprende-a-tratar-el-sobrepeso.jpg" />
+    }
+    else if (Model.estado == "4")
+    {
+        <p>Obesidad grado I</p>
+        <img src="https://www.clikisalud.net/wp-content/uploads/2016/12/shutterstock_502638388.jpg" />
+    }
+    else if (Model.estado == "5")
+    {
+        <p>Obesidad grado II</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkrTM-Q8SKiCp7rGSJNREYIjpXXkUayS2wqvZZqs0Fo9QEM_x6UDCeRMGsuwcW6lVhv1M&usqp=CAU" />
+    }
+    else if (Model.estado == "6")
+    {
+        <p>Obesidad grado III</p>
+        <img src="https://cirugiayobesidad.es/wp-content/uploads/2022/01/todo_sobre_obesidad_morbida.jpg" />
+    }
+</form>
+<br />
+

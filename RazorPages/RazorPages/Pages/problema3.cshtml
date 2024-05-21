@@ -1,0 +1,46 @@
+﻿@page
+@model RazorPages.Pages.problema3Model
+@{
+    ViewData["Title"] = "Evaluate Binomial Expression";
+}
+
+<h2>Evaluar la igualdad de la expresion matematica</h2>
+
+<form method="post">
+    <div>
+        <label for="a">a:</label>
+        <input type="number" step="any" id="a" name="a" required />
+    </div>
+    <div>
+        <label for="b">b:</label>
+        <input type="number" step="any" id="b" name="b" required />
+    </div>
+    <div>
+        <label for="x">x:</label>
+        <input type="number" step="any" id="x" name="x" required />
+    </div>
+    <div>
+        <label for="y">y:</label>
+        <input type="number" step="any" id="y" name="y" required />
+    </div>
+    <div>
+        <label for="n">n:</label>
+        <input type="number" id="n" name="n" required />
+    </div>
+    <button type="submit">Calcular</button>
+</form>
+
+@if (Model.ResultDirect != null && Model.ResultStepByStep != null)
+{
+    <h3>Resultado utilizando la fórmula directa:</h3>
+    <p><b>Resultado:</b> @Model.ResultDirect</p>
+
+    <h3>Resultado utilizando la fórmula expandida paso a paso:</h3>
+    <p><b>Resultado:</b></p>
+    <ul>
+        @foreach (var term in Model.ResultStepByStep)
+        {
+            <li>@term</li>
+        }
+    </ul>
+}
